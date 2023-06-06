@@ -1,0 +1,17 @@
+main::IO()
+main = do 
+
+putStrLn "Digite o valor de A:"
+a<-readLn :: IO Integer
+
+putStrLn "Digite o valor de B:"
+b<-readLn :: IO Integer
+
+let resultado =
+      if a == b
+        then a+b
+        else a*b  
+
+if a == b 
+then putStrLn $ "A soma de A e B é igual a " ++ show resultado
+else putStrLn $ "O produto de A e B é igual a " ++ show resultado
