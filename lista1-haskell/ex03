@@ -1,0 +1,11 @@
+main = do 
+
+putStrLn "Digite um número: "
+n<-readLn :: IO Integer
+
+let resto = mod n 2
+
+if resto == 0 then 
+      putStrLn "O número é par."
+else 
+      putStrLn "O número é ímpar."
