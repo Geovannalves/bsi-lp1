@@ -1,1 +1,17 @@
+main = do
+  putStrLn "Digite o valor de A:"
+  inputA <- getLine
+  let a = read inputA :: Int
 
+  putStrLn "Digite o valor de B:"
+  inputB <- getLine
+  let b = read inputB :: Int
+
+  putStrLn "Digite o valor de C:"
+  inputC <- getLine
+  let c = read inputC :: Int
+
+  if a + b < c then
+    putStrLn "A soma de A + B é menor que C."
+  else
+    putStrLn "A soma de A + B não é menor que C."
