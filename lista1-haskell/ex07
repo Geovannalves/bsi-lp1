@@ -1,0 +1,16 @@
+main::IO()
+main = do
+
+putStrLn $ "Digite um número: "
+n<-readLn :: IO Integer
+
+let resto = mod n 2
+
+let resposta = 
+      if resto == 0 
+           then n+5
+          else n+8
+
+if resto == 0
+then putStrLn $ "O número é par. A soma é: "++show resposta
+else putStrLn $ "O número é impar. A soma é: "++show resposta
