@@ -1,0 +1,98 @@
+package aula3_interface;
+
+import javax.swing.JOptionPane;
+
+public class Bike {
+    //atributos
+    String cor;
+    String marca;
+    String modelo;
+    int ano, vel;
+    
+    
+    public Bike(String cor, String marca, String modelo, int ano){
+        this.cor = cor;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        
+        
+    }
+    //metodos da classe
+    public String getCor() {
+
+        return cor;
+    }
+
+    public void setCor(String c) {
+
+        this.cor = c;
+    }
+
+    public String getMarca() {
+
+        return marca;
+    }
+
+    public void setMarca(String m) {
+
+        this.marca = m;
+    }
+    public String getModelo() {
+
+        return modelo;
+    }
+
+    public void setModelo(String mo) {
+
+        this.modelo = mo;
+    }
+
+    public int getAno() {
+
+        return ano;
+    }
+
+    public void setAno(int a) {
+
+        this.ano = a;
+    }
+
+    public int getVel() {
+
+        return vel;
+    }
+
+    public void setVel(int v) {
+
+        this.vel = v;
+    }
+
+    public String frear(boolean f) {
+        if (f) {
+            vel = 0;
+            return "A bicicleta foi freada.";
+        } else {
+            return " ";
+        }
+    }
+    
+    public Boolean testAno(int a){
+        this.ano = a;
+        if(a>0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public void statusBike(){
+        String status = "Cor: " + getCor() +
+                        "\nMarca: " + getMarca() +
+                        "\nModelo: " + getModelo() +
+                        "\nAno: " + getAno();
+        
+        JOptionPane.showMessageDialog(null, status, "STATUS DA BIKE", JOptionPane.INFORMATION_MESSAGE);
+                        
+    }
+}
