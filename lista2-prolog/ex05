@@ -1,0 +1,3 @@
+significado(1,  integer_overflow).
+significado(2, divisao_por_zero).
+significado(3, id_desconhecido).
