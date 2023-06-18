@@ -1,0 +1,7 @@
+come(girafa, folhas).
+come(zebra, grama).
+come(leao, zebra).
+come(leao, antilope).
+come(hiena, antilope).
+
+come(X, Y):- come(Z, Y), come(X, Z).
