@@ -1,0 +1,16 @@
+main::IO()
+
+mdc::Integer->Integer->Integer
+mdc n1 n2 
+ |n1 == 0 = n2
+ |n2 == 0 = n1
+ |otherwise = mdc n2 (mod n1 n2)
+
+main = do
+
+putStrLn "Digite um número:"
+n1<-readLn 
+putStrLn "Digite outro número:"
+n2<-readLn 
+
+putStrLn("MDC = "++show(mdc n1 n2))
