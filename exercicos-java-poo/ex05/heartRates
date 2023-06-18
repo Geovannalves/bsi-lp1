@@ -1,0 +1,133 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Calculadora;
+
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author alves
+ */
+public class HeartRates {
+    
+    private String nome;
+    private String sobrenome;
+    private int diaNasc;
+    private int mesNasc;
+    private int anoNasc;
+    private String dataNasc;
+  
+
+    
+    public HeartRates(String nome, String sobrenome, int diaNasc, int mesNasc, int anoNasc){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.dataNasc = diaNasc+"/"+mesNasc+"/"+anoNasc;
+        
+    }
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @return the sobrenome
+     */
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    /**
+     * @param sobrenome the sobrenome to set
+     */
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    /**
+     * @return the diaNasc
+     */
+    public int getDiaNasc() {
+        return diaNasc;
+    }
+
+    /**
+     * @param diaNasc the diaNasc to set
+     */
+    public void setDiaNasc(int diaNasc) {
+        this.diaNasc = diaNasc;
+    }
+
+    /**
+     * @return the mesNasc
+     */
+    public int getMesNasc() {
+        return mesNasc;
+    }
+
+    /**
+     * @param mesNasc the mesNasc to set
+     */
+    public void setMesNasc(int mesNasc) {
+        this.mesNasc = mesNasc;
+    }
+
+    /**
+     * @return the anoNasc
+     */
+    public int getAnoNasc() {
+        return anoNasc;
+    }
+
+    /**
+     * @param anoNasc the anoNasc to set
+     */
+    public void setAnoNasc(int anoNasc) {
+        this.anoNasc = anoNasc;
+    }
+    
+    public int getIdade(){
+        LocalDate dataAtual = LocalDate.now();
+        int anoAtual = dataAtual.getYear();
+        int mesAtual = dataAtual.getMonthValue();
+
+        int idade = anoAtual - anoNasc;
+
+        if (mesAtual < mesNasc) {
+            idade--;
+        }
+        return idade;
+        
+    }
+    
+    public double getFreqCardMax(){
+        double freq;
+        freq = 220 - getIdade();
+        
+        return freq;
+    }
+    
+    public double getFreqCardAlvo(){
+        double fAlvo;
+        
+        fAlvo = getFreqCardMax()/2;
+        
+        return fAlvo;
+    }
+    
+    public void infoPaciente(){
+        String infos = "Nome do paciente: " + getNome() + "\nIdade do paciente: " + getIdade() + "Data de nascimento: " +dataNasc +
+                      "\nFrequencia cardia maxima do paciente: " + getFreqCardMax() + "\nFrequancia cardiaca alvo do paciente: " + getFreqCardAlvo();
+        
+        JOptionPane.showMessageDialog(null, infos, "Informações do paciente", JOptionPane.INFORMATION_MESSAGE);
+    }
+}
