@@ -1,0 +1,12 @@
+main::IO()
+
+contarN::Float->Float
+contarN n
+  |n>=0 && n < 10 = 1
+  |otherwise = 1 + contarN(n/10)
+
+main = do 
+
+putStrLn "Digite um número:"
+n<-readLn 
+putStrLn("Número de digitos: "++show(contarN n))
